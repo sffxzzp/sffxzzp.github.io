@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>La Lune</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-07-16T17:50:50.841Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>sffxzzp</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/07/17/hello-world/"/>
+    <id>http://yoursite.com/2019/07/17/hello-world/</id>
+    <published>2019-07-16T17:31:07.289Z</published>
+    <updated>2019-07-16T17:50:50.841Z</updated>
+    
+    <content type="html"><![CDATA[<p>重新开始，仅以此「你好，世界」以记之。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;重新开始，仅以此「你好，世界」以记之。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
