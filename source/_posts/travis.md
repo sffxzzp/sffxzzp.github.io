@@ -1,6 +1,8 @@
 ---
 title: 最近用Travis-CI有感
-date: 2019-07-18 02:22:26
+date: 2019-07-17T18:22:26.000Z
+tags:
+  - 随笔
 comments: true
 ---
 一直以来更新[Starbound汉化](https://github.com/sffxzzp/Starbound-Chinese)都是手动更新。
