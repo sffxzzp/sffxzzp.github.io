@@ -28,11 +28,11 @@ mobile-header: light
 
 # Scheme
 # banderole | balance
-scheme: balance
+scheme: banderole
 
 # Header Style
 # line | block
-header-style: block
+header-style: line
 
 # theme-style
 # default: dark | green | blue | purple
