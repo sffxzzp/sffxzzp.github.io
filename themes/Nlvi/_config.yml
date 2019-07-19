@@ -44,7 +44,7 @@ theme-style: miku
 # ===========================================
 
 # Navigator in post
-toc: true
+toc: false
 
 # Use copyright infomation
 copyright:
