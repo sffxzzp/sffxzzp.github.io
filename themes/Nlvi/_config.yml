@@ -111,14 +111,14 @@ analytics:
   baidu:
 
 #visit_count(Powered by busuanzi on http://busuanzi.ibruce.info/)
-visit_count: false
+visit_count: true
 
 # ===========================================
 # Theme Settings
 # ===========================================
 
 # pjax
-pjax: false
+pjax: true
 
 # mathjax
 mathjax: true
@@ -127,7 +127,7 @@ mathjax: true
 lightbox: true
 
 # lazyload
-lazyload: false
+lazyload: true
 
 # animate (Powered by Syuanpi on https://colmugx.github.io/Syuanpi.css)
 animate: true
