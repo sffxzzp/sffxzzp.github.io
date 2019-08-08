@@ -17,6 +17,10 @@
   {{ js('script/lib/pjax/pjax') }}
 {% endif %}
 
+{% if theme.instantpage %}
+  {{ js('script/lib/instantpage/instantpage') }}
+{% endif %}
+
 {% if theme.scheme == 'banderole' %}
   {{ js('script/scheme/banderole') }}
 {% else %}

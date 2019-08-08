@@ -117,6 +117,9 @@ visit_count: true
 # Theme Settings
 # ===========================================
 
+# instantpage
+instantpage: true
+
 # pjax
 pjax: true
 
