@@ -118,7 +118,7 @@ visit_count: true
 # ===========================================
 
 # instantpage
-instantpage: true
+instantpage: false
 
 # pjax
 pjax: true
