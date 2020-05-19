@@ -6,18 +6,18 @@ nav:
   about: ついて
   menu: メニュー
   search: サーチ
-  RSS: 購読
+  rss: 購読
 page:
   prev: 前のページ
   next: 後のページ
   comment: コメント
   share: シェア
   hide: 隠す
-  readmore: Read More...
-  para: ここは合わせて %d 编
-  now: 今は
+  readmore: もっと見る...
+  para: '%d Posts'
+  now: 今
   reward: 褒賞
-  index: 書目
+  index: 目次
 
 copyright:
   author: 著者

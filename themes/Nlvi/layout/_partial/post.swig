@@ -1,6 +1,6 @@
 {% macro render(post) %}
-  {% if page.mathjax %}
-    <script src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  {% if !config.mathjax && !config.mathjax3 && page.mathjax %}
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
   {% endif %}
   <article class="
@@ -10,6 +10,9 @@
     <header class="post-header">
       <div class="post-time syuanpi fadeInRightShort back-1">
         <div class="post-time-wrapper">
+          {% if not is_post() and post.top %}
+            <i class="iconfont icon-pin post-pin"></i>
+          {% endif %}
           <time>{{ full_date(post.date, 'YYYY-MM-DD') }}</time>
           {% if post.categories and post.categories.length %}
             {% for category in post.categories %}

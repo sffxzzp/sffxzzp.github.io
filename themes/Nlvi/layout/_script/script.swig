@@ -1,16 +1,29 @@
-{{ js('script/lib/jquery/jquery-3.2.1.min') }}
+{{ js('https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js') }}
 
 {% if theme.lightbox %}
-  {{ js('script/lib/lightbox/js/lightbox.min') }}
+  <script></script>
+  <script src="{{ url_for('/') }}script/lib/lightbox/js/lightbox.min.js" async></script>
 {% endif %}
 
 {% if theme.mathjax %}
-  <script src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
 {% endif %}
 
+{% if theme.mathjax3 %}
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+    MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{% endif %}
+
 {% if theme.lazyload %}
-  {{ js('script/lib/layzr/layzr') }}
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" async></script>
 {% endif %}
 
 {% if theme.pjax %}

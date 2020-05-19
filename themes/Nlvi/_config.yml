@@ -8,7 +8,7 @@ menu:
   archives: /archives
   tags: /tags
   about: /about
-  RSS: /atom.xml
+  rss: /atom.xml
 
 # favicon
 favicon:
@@ -98,6 +98,8 @@ sub:
   github: sffxzzp
 #  linkedin:
 #  douban:
+#  medium:
+#  yuque:
 
 #Friend link
 # friendLink:
@@ -125,6 +127,7 @@ pjax: true
 
 # mathjax
 mathjax: true
+mathjax3: true
 
 # lightbox
 lightbox: true
@@ -159,11 +162,11 @@ search:
 
 # article-fonts
 # default | Simsun | YaHei | Hel | Custom
-fonts-style: default
+fonts-style: Simsun
 
 # code-fonts
 # default | Custom
-code-style: default
+code-style: Consolas
 
 # ===========================================
 # WebApp Settings (iOS)
