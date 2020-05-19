@@ -2,7 +2,7 @@
   var nlviconfig = {
     title: "{{ config.title }}",
     author: "{{ config.author }}",
-    baseUrl: "{{ url_for('/') }}",
+    baseUrl: "/",
     theme: {
       scheme: "{{ theme.scheme }}",
       lightbox: {{ theme.lightbox }},

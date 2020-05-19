@@ -2,7 +2,7 @@
 
 {% if theme.lightbox %}
   <script></script>
-  <script src="{{ url_for('/') }}script/lib/lightbox/js/lightbox.min.js" async></script>
+  <script src="/script/lib/lightbox/js/lightbox.min.js" async></script>
 {% endif %}
 
 {% if theme.mathjax %}
