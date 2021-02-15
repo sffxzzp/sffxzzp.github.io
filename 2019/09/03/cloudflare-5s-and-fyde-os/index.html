@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Lune">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name="format-detection" content="telephone=no">
+
+
+
+
+
+  <meta name="keywords" content="随笔, Python, CloudFlare, 安卓, Fyde OS, nlvi">
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+<link rel="stylesheet" href="../../../../style/style.css">
+<script>
+  var nlviconfig = {
+    title: "La Lune",
+    author: "sffxzzp",
+    baseUrl: "/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: true,
+      lazy: true,
+      toc: true
+    }
+  }
+</script>
+
+
+
+
+    <link rel="stylesheet" href="../../../../script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="../../../../syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+    <link rel="alternate" type="application/rss+xml" href="../../../../atom.xml">
+
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/font/allura/allura.ttf');
+}
+</style>
+
+  <title> 过CloudFlare 5秒盾与Fyde OS体验 · La Lune </title>
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <h1><a href="/">La Lune</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../../../index.html" id="article">
+        <span class="base-name">
+          
+            文章
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../../../archives" id="archives">
+        <span class="base-name">
+          
+            归档
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">
+          
+            标签
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../../../about" id="about">
+        <span class="base-name">
+          
+            关于
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../../../atom.xml" id="rss">
+        <span class="base-name">
+          
+            订阅
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">La Lune</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="../../../../index.html">
+            
+              文章
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="../../../../archives">
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-2">
+          <a href="javascript:;" id="mobile-tags">
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-3">
+          <a href="../../../../about">
+            
+              关于
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-4">
+          <a href="../../../../atom.xml">
+            
+              订阅
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2019-09-03</time>
+          
+        </div>
+      </div>
+      <h2 class="post-title syuanpi fadeInRightShort back-2">
+        
+          过CloudFlare 5秒盾与Fyde OS体验
+        
+      </h2>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <h2 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h2><p>首先令人感到有些沮丧的是，上一篇提到的布卡搜索由于布卡漫画彻底下架了想看的漫画，于是被我直接下掉了。</p>
+<p>写这篇的原因主要是最近还有一些新的体验想要分享一下，前几天一直想写一篇来着的，可是最近考试，再加上考完了放松了几天，于是拖到了现在。</p>
+<h2 id="过CloudFlare的防护"><a href="#过CloudFlare的防护" class="headerlink" title="过CloudFlare的防护"></a>过CloudFlare的防护</h2><p>首先值得一提的就是之前收藏的<a href="https://bbs.125.la/thread-14129627-1-1.html" target="_blank" rel="noopener">CloudFlare五秒防护</a>这个帖，在8月底终于被我用Python实现了。</p>
+<p>不得不说CloudFlare的这种防护方法确实有一些明显的效果，虽然被解析之后还是可以被爬虫爬到，但还是需要等待4秒多的时间，不然会直接被拦在CDN之前，影响不到源服务器。</p>
+<h3 id="解析方法"><a href="#解析方法" class="headerlink" title="解析方法"></a>解析方法</h3><p>那么下面来看一下如何解析一段CF防护页面的代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findstr</span><span class="params">(rule, string)</span>:</span></span><br><span class="line">    find_str = re.compile(rule)</span><br><span class="line">    <span class="keyword">return</span> find_str.findall(string)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decodeJSCode</span><span class="params">(code)</span>:</span></span><br><span class="line">    code = code.replace(<span class="string">'!![]'</span>, <span class="string">'1'</span>).replace(<span class="string">'!+[]'</span>, <span class="string">'1'</span>).replace(<span class="string">'(+[])'</span>, <span class="string">'(0)'</span>).replace(<span class="string">'+(('</span>, <span class="string">'('</span>).replace(<span class="string">'))'</span>, <span class="string">')'</span>).replace(<span class="string">'+[]'</span>, <span class="string">''</span>).split(<span class="string">'/'</span>)</span><br><span class="line">    fnumu = <span class="string">""</span></span><br><span class="line">    fnumd = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> findstr(<span class="string">'\(.*?\)'</span>, code[<span class="number">0</span>].replace(<span class="string">'+[]'</span>, <span class="string">''</span>)):</span><br><span class="line">        fnumu += str(eval(num))</span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> findstr(<span class="string">'\(.*?\)'</span>, code[<span class="number">1</span>].replace(<span class="string">'+[]'</span>, <span class="string">''</span>)):</span><br><span class="line">        fnumd += str(eval(num))</span><br><span class="line">    <span class="keyword">return</span> int(fnumu)/int(fnumd)</span><br><span class="line"></span><br><span class="line">code = <span class="string">'+((!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(+[])+(!+[]+!![]+!![]))/+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![])+(+[])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]))'</span></span><br><span class="line"></span><br><span class="line">print(decodeJSCode(code))</span><br></pre></td></tr></table></figure>
+
+<p>我们首先可以在浏览器里运行一下<code>code</code>后面的值，可以得到结果<code>4.380966109717446</code>。</p>
+<p>再运行一下上面那段Python代码，得出<code>4.380966109717446</code>，完全一致。</p>
+<p>下面来初步解释一下是怎么解析的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">首先：</span><br><span class="line">+((!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(+[])+(!+[]+!![]+!![]))/+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![])+(+[])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]))</span><br><span class="line"></span><br><span class="line">经过一番替换，得到：</span><br><span class="line">(1+1+1+1+1+1+1+1)+(1+1+1+1+1)+(1+1+1+1+1+1+1+1)+(1+1+1+1+1)+(1+1+1+1+1+1+1+1+1)+(1+1+1+1+1+1+1+1+1)+(1+1+1+1+1)+(0)+(1+1+1)/(+1)+(1+1+1+1+1+1+1+1+1)+(1+1+1+1+1)+(1+1+1+1+1+1+1+1+1)+(1+1+1+1+1+1+1+1)+(1+1+1+1)+(0)+(1+1+1+1+1)+(1+1+1+1+1)</span><br><span class="line"></span><br><span class="line">这其实就是上面帖子提到的内容，仔细看看就知道了。</span><br><span class="line">但在JS中这个实际上是文本型的相加，所以对这个式子进行运算时，每个括号代表着一位数。</span><br><span class="line"></span><br><span class="line">所以上面那一串实际上应该是：</span><br><span class="line">858599503/195984055 = 4.380966109717446</span><br><span class="line"></span><br><span class="line">这两个数字相除的结果，就是JS计算得出的结果。</span><br></pre></td></tr></table></figure>
+
+<h3 id="之后"><a href="#之后" class="headerlink" title="之后"></a>之后</h3><p>解决了这个问题之后，剩下的实际上就是怎么对文本进行处理，以达到和JS运算结果一致的问题，详细代码可以看我这个<a href="https://github.com/sffxzzp/cloudflare-bypass" target="_blank" rel="noopener">Github仓库</a>。</p>
+<h2 id="Fyde-OS-初体验"><a href="#Fyde-OS-初体验" class="headerlink" title="Fyde OS 初体验"></a>Fyde OS 初体验</h2><p>之前看到别人说FydeOs，上个礼拜正好有空试了一下，至于尝试的原因有点不记得了。</p>
+<p>可能是因为官网上写着支持 <code>Win + Linux + 安卓</code>，让我有点心痒痒了。总之就是拿之前Ebay薅来的32G的U盘写入了FydeOS。</p>
+<p>由于时间太久，也忘记留截图了，总之我是初步试了一下。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>首先就是支持安卓应用，感觉非常不错，我给装了个AIDE，跑起来挺正常的，其他一些App也工作良好，兼容性实际还是不错的。</p>
+<p>然后是Linux，这个实际上是Chrome OS的功能，没什么好说的，和原生Chrome OS基本一致的体验。</p>
+<p>最后就是所谓的Windows，实际上是通过在安卓上装CrossOver二次模拟，之前运行了一下Pandownload，除了缺字库（字库可以下载）之外基本上运行没什么问题，就是操作起来太繁琐了，实在不如直接用Win。</p>
+<p>但这个实际上是直接在U盘上运行的系统，所以到哪儿一插就完事儿，我觉得这一点也比较适合轻办公的特点吧。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>下面说说几个缺点，首先是Chrome OS原生应用太少，全靠安卓撑门面，虽然有魔法上网可以在Chrome Store里下载应用，但FydeOS内部空间太少，想装个VLC提示容量不够。</p>
+<p>第二个就是既然内置了Google Play，那你就应该让人用啊。我给整了半天的魔法上网，打开了Play Store，然后提示设备未验证，还得自己去谷歌提交GSF ID才解决了问题。具体解决方案参考<a href="https://www.appinn.com/gapps-install/" target="_blank" rel="noopener">这篇小众软件的帖子</a>。</p>
+<p>第三就是U盘的问题，虽然说非常方便，但U盘作为U盘本身的功能就废了。如果在Windows下面插入U盘，还直接吃掉十几个盘符，这个不是非常令人满意。</p>
+<p>如果要像以前的PE系统那种，分区之后，该不显示的不显示，然后还有一部分能显示出来做U盘使用那就更好了。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体上来说，我个人还是比较满意FydeOS的，毕竟相比虚拟机来说，实体机运行更快捷，而且是直接运行于U盘，并不占用硬盘，且即插即用，自身的定位还是非常准确的。</p>
+<p>不过Fyde OS自家出的的那款笔记本我觉得还是不太行，毕竟Fyde自身还是太菜了，接下来应该更加注重开发基于Chrome OS的应用，而不是整那些花头，好用才是硬道理。</p>
+
+      
+    
+    </div>
+    
+      <div class="post-tags syuanpi fadeInRightShort back-3">
+      
+        <a href="../../../../tags/随笔/">随笔</a>
+      
+        <a href="../../../../tags/Python/">Python</a>
+      
+        <a href="../../../../tags/CloudFlare/">CloudFlare</a>
+      
+        <a href="../../../../tags/安卓/">安卓</a>
+      
+        <a href="../../../../tags/Fyde-OS/">Fyde OS</a>
+      
+      </div>
+    
+    
+      
+
+      
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="../../../10/29/recent-codes-on-dz/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>最近写Discuz插件时的一些记录
+        </span>
+      </a>
+    
+    
+      <a href="../../../08/19/new-arukas-and-buka-search-php/" id="art-right" class="art-right">
+        <span class="prev-title">
+          重新用上Arukas & 布卡搜索PHP版<i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
+  </nav>
+
+
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+  <div id="lv-container" data-id="city" data-uid="MTAyMC80NTM2Ni8yMTg3OQ==">
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+  </div>
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <div class="title"><span>文章导航</span></div>
+    <div class="toc-inner">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#说在前面"><span class="toc-text">说在前面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过CloudFlare的防护"><span class="toc-text">过CloudFlare的防护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解析方法"><span class="toc-text">解析方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#之后"><span class="toc-text">之后</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fyde-OS-初体验"><span class="toc-text">Fyde OS 初体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缺点"><span class="toc-text">缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+    </div>
+  </aside>
+
+
+
+  
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a href="https://github.com/sffxzzp" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2019 ~ 2021</span>
+        <span>❤</span>
+        <span>sffxzzp</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+    <div class="visit_count">
+        <i class="iconfont icon-eye"></i>
+        <span id="busuanzi_value_site_uv"></span>
+        <i class="iconfont icon-team"></i>
+        <span id="busuanzi_value_site_pv"></span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>随笔</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Python</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>JavaScript</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CloudFlare</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Workers</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>安卓</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Fyde OS</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>其他</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Go</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>PHP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Docker</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Win10</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>RSS</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Discuz</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>随笔</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/11/buka-search-and-pic/">
+            <time class="tagcloud-posttime">2019 / 08 / 11</time>
+            <span>布卡漫画搜索 & 下载</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/05/storage-redirect-and-edxp/">
+            <time class="tagcloud-posttime">2019 / 08 / 05</time>
+            <span>存储重定向和EdXposed</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/07/17/travis/">
+            <time class="tagcloud-posttime">2019 / 07 / 17</time>
+            <span>最近用Travis-CI有感</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Python</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/11/buka-search-and-pic/">
+            <time class="tagcloud-posttime">2019 / 08 / 11</time>
+            <span>布卡漫画搜索 & 下载</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>JavaScript</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/05/16/zzzfun-analyzation/">
+            <time class="tagcloud-posttime">2020 / 05 / 17</time>
+            <span>记一次对 ZzzFun 网站的分析</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CloudFlare</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Workers</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>安卓</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2021/02/15/lsposed-golang/">
+            <time class="tagcloud-posttime">2021 / 02 / 15</time>
+            <span>LSPosed 与 Go 语言</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/05/storage-redirect-and-edxp/">
+            <time class="tagcloud-posttime">2019 / 08 / 05</time>
+            <span>存储重定向和EdXposed</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Fyde OS</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>其他</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/07/17/hello-world/">
+            <time class="tagcloud-posttime">2019 / 07 / 17</time>
+            <span>Hello World</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Go</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2021/02/15/lsposed-golang/">
+            <time class="tagcloud-posttime">2021 / 02 / 15</time>
+            <span>LSPosed 与 Go 语言</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>PHP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Docker</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Win10</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>RSS</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Discuz</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+  <script></script>
+  <script src="/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
+
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+    MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" async></script>
+
+
+
+  <script src="../../../../script/lib/pjax/pjax.js"></script>
+
+
+
+
+
+  <script src="../../../../script/scheme/banderole.js"></script>
+
+
+<script src="../../../../script/bootstarp.js"></script>
+
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+
+
+
+</body>
+</html>

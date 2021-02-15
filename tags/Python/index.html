@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Lune">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name="format-detection" content="telephone=no">
+
+
+
+
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+<link rel="stylesheet" href="../../style/style.css">
+<script>
+  var nlviconfig = {
+    title: "La Lune",
+    author: "sffxzzp",
+    baseUrl: "/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: true,
+      lazy: true,
+      toc: true
+    }
+  }
+</script>
+
+
+
+
+    <link rel="stylesheet" href="../../script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="../../syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+    <link rel="alternate" type="application/rss+xml" href="../../atom.xml">
+
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/font/allura/allura.ttf');
+}
+</style>
+
+  <title>
+  
+    Python · La Lune
+  
+</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <h1><a href="/">La Lune</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../index.html" id="article">
+        <span class="base-name">
+          
+            文章
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../archives" id="archives">
+        <span class="base-name">
+          
+            归档
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">
+          
+            标签
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../about" id="about">
+        <span class="base-name">
+          
+            关于
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../atom.xml" id="rss">
+        <span class="base-name">
+          
+            订阅
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">La Lune</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="../../index.html">
+            
+              文章
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="../../archives">
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-2">
+          <a href="javascript:;" id="mobile-tags">
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-3">
+          <a href="../../about">
+            
+              关于
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-4">
+          <a href="../../atom.xml">
+            
+              订阅
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  <div class="archive syuanpi fadeInRightShort" id="archive">
+    
+      
+      
+        
+          
+        
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>之前有人给我推荐这个插件，并且问是不是能提取出来用。我试了下体验确实不错，所以花了点时间分析了下这个插件。</p>
+<h2 id="开始分析"><a href="#开始分析" class="headerlink" title="开始分析"></a>开始分析</h2><p>这次的插件来自谷歌市场，插件ID是<code>jajilbjjinjmgcibalaakngmkilboobh</code>。</p>
+<h3 id="1-查找-manifest-json"><a href="#1-查找-manifest-json" class="headerlink" title="1. 查找 manifest.json"></a>1. 查找 manifest.json</h3><p>谷歌浏览器插件一般都有个<code>manifest.json</code>来存储插件的各种属性。</p>
+<p>所以此次也是从这个文件开始。</p>
+<p>其中的<code>background</code>段就是此次的目标了。[<a href="https://developer.chrome.com/extensions/background_pages" target="_blank" rel="noopener">引用</a>]</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"background": &#123;</span><br><span class="line">    "scripts": [ "/js/jquery-2.1.1.js", "/js/MD5.js", "/js/aes.js", "/js/ss.js"]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对文件名稍作分析可知，也就只有<code>ss.js</code>可能与本次分析相关了。</p>
+<h3 id="2-分析-js-文件"><a href="#2-分析-js-文件" class="headerlink" title="2. 分析 js 文件"></a>2. 分析 js 文件</h3><p>打开这个文件阅读代码，这压缩过的代码看着头疼，先整个 beautifier 美化一下代码，增加可读性。</p>
+<p>然后很轻松就能找到 clientFun() 函数，附录如下（对域名做省略处理）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clientFun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.init = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url: <span class="string">"https://.../getProxyList?"</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>).getTime(),</span><br><span class="line">            type: <span class="string">"post"</span>,</span><br><span class="line">            dataType: <span class="string">"json"</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                strP: chrome.runtime.id</span><br><span class="line">            &#125;,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> (<span class="params">o</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> t = CryptoJS.enc.Utf8.parse(hex_md5(o.s).substring(<span class="number">0</span>, <span class="number">16</span>)),</span><br><span class="line">                    r = CryptoJS.AES.decrypt(o.d, t, &#123;</span><br><span class="line">                        mode: CryptoJS.mode.ECB,</span><br><span class="line">                        padding: CryptoJS.pad.Pkcs7</span><br><span class="line">                    &#125;),</span><br><span class="line">                    n = <span class="string">""</span> + CryptoJS.enc.Utf8.stringify(r),</span><br><span class="line">                    i = $.parseJSON(n)</span><br><span class="line">                <span class="keyword">if</span> (<span class="number">0</span> != i.nCode) <span class="keyword">return</span> localStorage.state = <span class="string">"0"</span>, localStorage._click = <span class="string">"1"</span>, chrome.browserAction.setBadgeBackgroundColor(&#123;</span><br><span class="line">                    color: <span class="string">"#FFFFFF"</span></span><br><span class="line">                &#125;), chrome.browserAction.setBadgeText(&#123;</span><br><span class="line">                    text: <span class="string">""</span></span><br><span class="line">                &#125;), server.req(&#123;</span><br><span class="line">                    n: <span class="number">0</span></span><br><span class="line">                &#125;), <span class="keyword">void</span> <span class="built_in">console</span>.info(<span class="string">"service exception"</span>)</span><br><span class="line">                localStorage._sl = <span class="built_in">JSON</span>.stringify(i.jsonObject), localStorage._s = o.s</span><br><span class="line">                <span class="keyword">var</span> s = localStorage.state</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">void</span> <span class="number">0</span> == s ? <span class="keyword">void</span>(<span class="keyword">void</span> <span class="number">0</span> != e &amp;&amp; <span class="literal">null</span> != e &amp;&amp; server.req(&#123;</span><br><span class="line">                    n: e</span><br><span class="line">                &#125;)) : <span class="string">"0"</span> == s ? <span class="keyword">void</span>(<span class="keyword">void</span> <span class="number">0</span> != e &amp;&amp; <span class="literal">null</span> != e &amp;&amp; server.req(&#123;</span><br><span class="line">                    n: e</span><br><span class="line">                &#125;)) : (p.exceptionNumber = <span class="number">0</span>, <span class="keyword">void</span> client.getProxy())</span><br><span class="line">            &#125;,</span><br><span class="line">            error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.info(<span class="string">"service net exception"</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;, <span class="keyword">this</span>.getProxy = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> e = localStorage._s</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">void</span> <span class="number">0</span> != e) &#123;</span><br><span class="line">            <span class="keyword">var</span> o = localStorage._i</span><br><span class="line">            <span class="keyword">void</span> <span class="number">0</span> != o &amp;&amp; $.ajax(&#123;</span><br><span class="line">                url: <span class="string">"https://.../getProxy?"</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>).getTime(),</span><br><span class="line">                type: <span class="string">"post"</span>,</span><br><span class="line">                dataType: <span class="string">"json"</span>,</span><br><span class="line">                data: &#123;</span><br><span class="line">                    strP: chrome.runtime.id,</span><br><span class="line">                    strtoken: e,</span><br><span class="line">                    lid: o</span><br><span class="line">                &#125;,</span><br><span class="line">                success: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">var</span> t = CryptoJS.enc.Utf8.parse(hex_md5(e.s).substring(<span class="number">0</span>, <span class="number">16</span>)),</span><br><span class="line">                        r = CryptoJS.AES.decrypt(e.d, t, &#123;</span><br><span class="line">                            mode: CryptoJS.mode.ECB,</span><br><span class="line">                            padding: CryptoJS.pad.Pkcs7</span><br><span class="line">                        &#125;),</span><br><span class="line">                        n = <span class="string">""</span> + CryptoJS.enc.Utf8.stringify(r),</span><br><span class="line">                        i = $.parseJSON(n)</span><br><span class="line">                    <span class="keyword">if</span> (<span class="number">102</span> != i.nCode) <span class="keyword">return</span> localStorage.state = <span class="string">"0"</span>, localStorage._click = <span class="string">"1"</span>, chrome.browserAction.setBadgeBackgroundColor(&#123;</span><br><span class="line">                        color: <span class="string">"#FFFFFF"</span></span><br><span class="line">                    &#125;), chrome.browserAction.setBadgeText(&#123;</span><br><span class="line">                        text: <span class="string">""</span></span><br><span class="line">                    &#125;), server.req(&#123;</span><br><span class="line">                        n: <span class="number">0</span></span><br><span class="line">                    &#125;), <span class="keyword">void</span> <span class="built_in">console</span>.info(<span class="string">"proxy line exception,please select other proxy line."</span>)</span><br><span class="line">                    p.on(i.jsonObject), localStorage._click = <span class="string">"1"</span>, server.req(&#123;</span><br><span class="line">                        n: <span class="number">1</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                    <span class="keyword">var</span> s = localStorage._sl</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">void</span> <span class="number">0</span> != s) &#123;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="built_in">JSON</span>.parse(s), c = <span class="number">0</span>; c &lt; i.d.length; c++) <span class="keyword">void</span> <span class="number">0</span> == o ? <span class="number">0</span> == c &amp;&amp; (chrome.browserAction.setBadgeBackgroundColor(&#123;</span><br><span class="line">                            color: [<span class="number">16</span>, <span class="number">201</span>, <span class="number">33</span>, <span class="number">100</span>]</span><br><span class="line">                        &#125;), chrome.browserAction.setBadgeText(&#123;</span><br><span class="line">                            text: i.d[c].p.replace(<span class="string">".png"</span>, <span class="string">""</span>)</span><br><span class="line">                        &#125;)) : i.d[c].i == o &amp;&amp; (chrome.browserAction.setBadgeBackgroundColor(&#123;</span><br><span class="line">                            color: [<span class="number">16</span>, <span class="number">201</span>, <span class="number">33</span>, <span class="number">100</span>]</span><br><span class="line">                        &#125;), chrome.browserAction.setBadgeText(&#123;</span><br><span class="line">                            text: i.d[c].p.replace(<span class="string">".png"</span>, <span class="string">""</span>)</span><br><span class="line">                        &#125;))</span><br><span class="line">                        p.exceptionState = <span class="number">0</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="built_in">console</span>.info(<span class="string">"service net exception"</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="keyword">this</span>.heartDump = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> e = localStorage._s,</span><br><span class="line">            o = localStorage._i,</span><br><span class="line">            t = localStorage._sl,</span><br><span class="line">            r = localStorage.state</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">void</span> <span class="number">0</span> != e &amp;&amp; <span class="keyword">void</span> <span class="number">0</span> != o &amp;&amp; <span class="keyword">void</span> <span class="number">0</span> != t &amp;&amp; <span class="number">0</span> != r) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> n = <span class="built_in">JSON</span>.parse(t), i = <span class="string">""</span>, s = <span class="number">0</span>; s &lt; n.d.length; s++) <span class="keyword">void</span> <span class="number">0</span> == o ? <span class="number">0</span> == s &amp;&amp; (i = n.d[s].n) : n.d[s].i == o &amp;&amp; (i = n.d[s].n)</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: <span class="string">"https://.../heartDump?"</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>).getTime(),</span><br><span class="line">                type: <span class="string">"post"</span>,</span><br><span class="line">                dataType: <span class="string">"json"</span>,</span><br><span class="line">                data: &#123;</span><br><span class="line">                    strP: chrome.runtime.id,</span><br><span class="line">                    strtoken: e,</span><br><span class="line">                    lid: o,</span><br><span class="line">                    strlognid: i</span><br><span class="line">                &#125;,</span><br><span class="line">                success: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;&#125;,</span><br><span class="line">                error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="keyword">this</span>.timeSend = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据 ajax 代码很容易就知道发送了哪些请求。</p>
+<p>首先 POST 了 getProxyList 这个 URL，来获取节点列表。</p>
+<p>然后根据获取的节点信息再次 POST getProxy，来获取具体的节点配置。</p>
+<h3 id="3-使用-Python-来获取信息"><a href="#3-使用-Python-来获取信息" class="headerlink" title="3. 使用 Python 来获取信息"></a>3. 使用 Python 来获取信息</h3><p>首先不管三七二十一，先整上两个请求。</p>
+<p>但直接请求拿到的内容却是 404？</p>
+<p>从浏览器 background.html 中用 fetch 试了一下，又是可以拿到数据的。</p>
+<p>仔细比对了两个请求，发现竟然是对 Origin 头做了验证，仿照一下就能正常拿到数据了。</p>
+<p>getProxyList 返回结果如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"s"</span>:<span class="string">"0d327617ce254bc881bfedfc87ee28e7"</span>,</span><br><span class="line">    <span class="attr">"d"</span>:<span class="string">"af4Gqt15mMWCabEiFWd9AVYn3xYxZB7UeKc2GGL/9iBDTglBIp6a/hDN8MxF9tEioKYdZ16v5f90OUtcUhtAkwK4rJC+kW+HMAU6igJ4jcjXPBzDOJKhYM9Kmk5LEYrfKqnxnwldGIsvhYqGVEw4oRltxKlB6D5EQH5idI5iP2PWSCSOuxeeiST0sYGEBi/9gIUs7KKs/XJ3sWA3ILZJKG7FDSczQFpDjK5GlzcEU7MHppALTJxEDyCXBOco6VmrA8d3u8cLylVspFNfFzpRnAiQ/Q4g5u6n7tYXcv4BjVK1JhExTQEorSZEclg7TC/u/JgWbKOb6foRFwYFgEqHA1dyHuiF+XcbmxwgWz/jyl/aOqxb0ydHe3onzhGbSUZBslaTJb4sdhQeaS9se28HZ66fzQAZQVfHFgYvcT7assnCLbNPijR70MkrbTmMtGMpAxeCccPxLYqnny+juAhbwWk0FNjFjvXPxymNqsWl5811jrR0Vhn2hY1gOpROaVmTRsJV0hfDlF0qckyenzkGcGPSy9yAfrJsYUm+ZC7KpmegqHAqM0rzTMF0rq0a6ppEM4738cSitwZ79bHxOCX/7u8DwmOQMUvmGHHA3FPoQ99hF9qJA1A9LGk6KggRi19gClD7ctLhNRArmxwb3LlJ1POl3hgki19hzrR5kf6J7HPMSK/av9F57ZidCcM6SHxRKNnUtmx+jsgoZCrUfY/BijfJoYAvu5RhLRrvAD7fmO8="</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上文 js 代码可知，要对返回的数据做一套 AES 解密才能拿到真实数据。</p>
+<p>解密后内容如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'strText': 'succ',</span><br><span class="line">    'nCode': 0,</span><br><span class="line">    'jsonObject': &#123;</span><br><span class="line">        'd': [</span><br><span class="line">            &#123;'n': 'Los Angeles.US', 'i': 25, 'p': 'US.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'Japan', 'i': 17, 'p': 'JP.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'Singapore', 'i': 34, 'p': 'SG.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'Germany', 'i': 26, 'p': 'DE.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'Canada', 'i': 27, 'p': 'CA.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'India', 'i': 35, 'p': 'IN.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'France', 'i': 20, 'p': 'FR.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'Poland', 'i': 12, 'p': 'PL.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'Netherlands', 'i': 15, 'p': 'NL.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'Australia', 'i': 19, 'p': 'AU.png', 'l': 2&#125;,</span><br><span class="line">            &#123;'n': 'United Kingdom', 'i': 31, 'p': 'GB.png', 'l': 2&#125;</span><br><span class="line">        ],</span><br><span class="line">        'i': '125.127.210.252'</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>节点列表就有了，然后继续访问 getProxy。</p>
+<p>可得：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"s"</span>:<span class="string">"5e3ff55c11154cf1b7865b101e8358b5"</span>,</span><br><span class="line">    <span class="attr">"d"</span>:<span class="string">"DPc330eCV/RpmAXU2OncatIN476wsUcpvP8EtND85CxUtrVDrbIsTzu5hRUVcp2l4SHQiFkJ6W9Mi+QfuMhwK53f+0bieRXd7kJqRlUu92dABCtV7b8T4XfppwM8JCK2HsicDGLtn1iHiiPG0SawdcPKHSud6pev/7RwH8pV/9IUZjkBHs61lv6RUmHEsxiVg1v4ufLC0Ifm18o8L0fHFsqRW2gdwL3O3EBEGCvkuD/DJaFflIEq2lq1VjnSOcatMKLFwN24fSQwSv9SCcW6vCcol6PxhTVe2xRkAiIQSy5fEiRkrOsfBuizD6tj3eWisB01WrauFx2lVoA59jJ0Obu4GV3B/xjBaRTT/NzBQsC4q0rz2zhjxF5cvm82t+yPAQXN1ylStvdctxdLpYbLrGJE82PlkDA9P94g5xu/UAH/9mvshsdzmlYlE1Z1N79QfVxUE9fiwimtdE6NM0U7uTWY63A9wTgW8HG+tXNjCabHAc1zMyTm2C5TT8q95SqSFscR12s5+zKo4GY6t8lPmltBll9aDIcuYfb9mgLyxPj47NyB5syaBpkbx5TnvcveIKSmmz6aIik2dHViVtfLuPl3m4SfnZKdKzubaQKecz/Nk4eFCX6wYGI2cbYYBNXL"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再次解密可得：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'jsonObject': &#123;</span><br><span class="line">        '_s': 'TJCIcFqpRJ8Q57YwSu81AgZ+WnE04YlycPm6lNPCAh3JBKqCU6ZSXUkjUQcyw5fbrCbFRrja5NyuntYZmtTff3iQcWcWffd00Bq5SYsLxVjOmVlKmQOSkrlx44YS2Pkdo2nLwDtulNiYjL1QugF0+8itMxq2uFJJ4X8Hn4FhXh8YEd2ErpKzo9X5AUjKk9vQXuHgjHW27mKVUkRHDJBYlgqlBNzBnTkXNGCCaVXGq54/leypsveEyKRYhJOi84c8P36hLDbTidhxi34foLmQ52ymPyq6LbmHJvveb8ky3Aj8FvFM9lSzfejzFkr5pvPXiWehqafpf4VnYyKtYM02gUeT4awNTaoo6e3X8Im2CO5fO3Zf0MLsQOvZ7mYpPWJ/',</span><br><span class="line">        '_p': '32b3b045a013494dbf6c3177e34f63b4'</span><br><span class="line">    &#125;,</span><br><span class="line">    'nCode': 102,</span><br><span class="line">    'strText': 'succ'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后对 jsonObject 的内容再次解密，就可以获得 pac 地址了。</p>
+<p>再从 pac 中提取出代理地址即可直接使用。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>这篇文章仅是个人爱好的一篇小结，<strong>请勿</strong>进行直接或间接的滥用。</p>
+
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2020-10-27
+            </time>
+            <a class="archive-post-link" href="../../2020/10/27/astar-proxy/">
+              Astar 插件分析
+            </a>
+          </div>
+        </div>
+      
+        
+          
+        
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <h2 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h2><p>首先令人感到有些沮丧的是，上一篇提到的布卡搜索由于布卡漫画彻底下架了想看的漫画，于是被我直接下掉了。</p>
+<p>写这篇的原因主要是最近还有一些新的体验想要分享一下，前几天一直想写一篇来着的，可是最近考试，再加上考完了放松了几天，于是拖到了现在。</p>
+<h2 id="过CloudFlare的防护"><a href="#过CloudFlare的防护" class="headerlink" title="过CloudFlare的防护"></a>过CloudFlare的防护</h2><p>首先值得一提的就是之前收藏的<a href="https://bbs.125.la/thread-14129627-1-1.html" target="_blank" rel="noopener">CloudFlare五秒防护</a>这个帖，在8月底终于被我用Python实现了。</p>
+<p>不得不说CloudFlare的这种防护方法确实有一些明显的效果，虽然被解析之后还是可以被爬虫爬到，但还是需要等待4秒多的时间，不然会直接被拦在CDN之前，影响不到源服务器。</p>
+<h3 id="解析方法"><a href="#解析方法" class="headerlink" title="解析方法"></a>解析方法</h3><p>那么下面来看一下如何解析一段CF防护页面的代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findstr</span><span class="params">(rule, string)</span>:</span></span><br><span class="line">    find_str = re.compile(rule)</span><br><span class="line">    <span class="keyword">return</span> find_str.findall(string)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decodeJSCode</span><span class="params">(code)</span>:</span></span><br><span class="line">    code = code.replace(<span class="string">'!![]'</span>, <span class="string">'1'</span>).replace(<span class="string">'!+[]'</span>, <span class="string">'1'</span>).replace(<span class="string">'(+[])'</span>, <span class="string">'(0)'</span>).replace(<span class="string">'+(('</span>, <span class="string">'('</span>).replace(<span class="string">'))'</span>, <span class="string">')'</span>).replace(<span class="string">'+[]'</span>, <span class="string">''</span>).split(<span class="string">'/'</span>)</span><br><span class="line">    fnumu = <span class="string">""</span></span><br><span class="line">    fnumd = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> findstr(<span class="string">'\(.*?\)'</span>, code[<span class="number">0</span>].replace(<span class="string">'+[]'</span>, <span class="string">''</span>)):</span><br><span class="line">        fnumu += str(eval(num))</span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> findstr(<span class="string">'\(.*?\)'</span>, code[<span class="number">1</span>].replace(<span class="string">'+[]'</span>, <span class="string">''</span>)):</span><br><span class="line">        fnumd += str(eval(num))</span><br><span class="line">    <span class="keyword">return</span> int(fnumu)/int(fnumd)</span><br><span class="line"></span><br><span class="line">code = <span class="string">'+((!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(+[])+(!+[]+!![]+!![]))/+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![])+(+[])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]))'</span></span><br><span class="line"></span><br><span class="line">print(decodeJSCode(code))</span><br></pre></td></tr></table></figure>
+
+<p>我们首先可以在浏览器里运行一下<code>code</code>后面的值，可以得到结果<code>4.380966109717446</code>。</p>
+<p>再运行一下上面那段Python代码，得出<code>4.380966109717446</code>，完全一致。</p>
+<p>下面来初步解释一下是怎么解析的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">首先：</span><br><span class="line">+((!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(+[])+(!+[]+!![]+!![]))/+((+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![])+(+[])+(!+[]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]))</span><br><span class="line"></span><br><span class="line">经过一番替换，得到：</span><br><span class="line">(1+1+1+1+1+1+1+1)+(1+1+1+1+1)+(1+1+1+1+1+1+1+1)+(1+1+1+1+1)+(1+1+1+1+1+1+1+1+1)+(1+1+1+1+1+1+1+1+1)+(1+1+1+1+1)+(0)+(1+1+1)/(+1)+(1+1+1+1+1+1+1+1+1)+(1+1+1+1+1)+(1+1+1+1+1+1+1+1+1)+(1+1+1+1+1+1+1+1)+(1+1+1+1)+(0)+(1+1+1+1+1)+(1+1+1+1+1)</span><br><span class="line"></span><br><span class="line">这其实就是上面帖子提到的内容，仔细看看就知道了。</span><br><span class="line">但在JS中这个实际上是文本型的相加，所以对这个式子进行运算时，每个括号代表着一位数。</span><br><span class="line"></span><br><span class="line">所以上面那一串实际上应该是：</span><br><span class="line">858599503/195984055 = 4.380966109717446</span><br><span class="line"></span><br><span class="line">这两个数字相除的结果，就是JS计算得出的结果。</span><br></pre></td></tr></table></figure>
+
+<h3 id="之后"><a href="#之后" class="headerlink" title="之后"></a>之后</h3><p>解决了这个问题之后，剩下的实际上就是怎么对文本进行处理，以达到和JS运算结果一致的问题，详细代码可以看我这个<a href="https://github.com/sffxzzp/cloudflare-bypass" target="_blank" rel="noopener">Github仓库</a>。</p>
+<h2 id="Fyde-OS-初体验"><a href="#Fyde-OS-初体验" class="headerlink" title="Fyde OS 初体验"></a>Fyde OS 初体验</h2><p>之前看到别人说FydeOs，上个礼拜正好有空试了一下，至于尝试的原因有点不记得了。</p>
+<p>可能是因为官网上写着支持 <code>Win + Linux + 安卓</code>，让我有点心痒痒了。总之就是拿之前Ebay薅来的32G的U盘写入了FydeOS。</p>
+<p>由于时间太久，也忘记留截图了，总之我是初步试了一下。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>首先就是支持安卓应用，感觉非常不错，我给装了个AIDE，跑起来挺正常的，其他一些App也工作良好，兼容性实际还是不错的。</p>
+<p>然后是Linux，这个实际上是Chrome OS的功能，没什么好说的，和原生Chrome OS基本一致的体验。</p>
+<p>最后就是所谓的Windows，实际上是通过在安卓上装CrossOver二次模拟，之前运行了一下Pandownload，除了缺字库（字库可以下载）之外基本上运行没什么问题，就是操作起来太繁琐了，实在不如直接用Win。</p>
+<p>但这个实际上是直接在U盘上运行的系统，所以到哪儿一插就完事儿，我觉得这一点也比较适合轻办公的特点吧。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>下面说说几个缺点，首先是Chrome OS原生应用太少，全靠安卓撑门面，虽然有魔法上网可以在Chrome Store里下载应用，但FydeOS内部空间太少，想装个VLC提示容量不够。</p>
+<p>第二个就是既然内置了Google Play，那你就应该让人用啊。我给整了半天的魔法上网，打开了Play Store，然后提示设备未验证，还得自己去谷歌提交GSF ID才解决了问题。具体解决方案参考<a href="https://www.appinn.com/gapps-install/" target="_blank" rel="noopener">这篇小众软件的帖子</a>。</p>
+<p>第三就是U盘的问题，虽然说非常方便，但U盘作为U盘本身的功能就废了。如果在Windows下面插入U盘，还直接吃掉十几个盘符，这个不是非常令人满意。</p>
+<p>如果要像以前的PE系统那种，分区之后，该不显示的不显示，然后还有一部分能显示出来做U盘使用那就更好了。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体上来说，我个人还是比较满意FydeOS的，毕竟相比虚拟机来说，实体机运行更快捷，而且是直接运行于U盘，并不占用硬盘，且即插即用，自身的定位还是非常准确的。</p>
+<p>不过Fyde OS自家出的的那款笔记本我觉得还是不太行，毕竟Fyde自身还是太菜了，接下来应该更加注重开发基于Chrome OS的应用，而不是整那些花头，好用才是硬道理。</p>
+
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2019-09-03
+            </time>
+            <a class="archive-post-link" href="../../2019/09/03/cloudflare-5s-and-fyde-os/">
+              过CloudFlare 5秒盾与Fyde OS体验
+            </a>
+          </div>
+        </div>
+      
+        
+          
+        
+        <div class="archive-post">
+          <div class="archive-post-content">
+            
+              <p>起因是之前补番的时候看到橘里橘气的 Citrus，觉得挺好看，想去补一下漫画。（emmmmm，好像暴露了什么<br>在网上搜了一圈，能比较全的也就只有布卡，但布卡不支持手机，只好下 App 回来用。</p>
+<p>然后有意思的来了，App 里只能搜索到一些国漫，根本没法搜索到 Citrus，但直接拿搜索引擎就能搜到，非常有意思。<br>最后查了一下，似乎是由于某些不能说的原因才让这个搜索变成这样。<br>而搜索引擎也有一些内容没法搜索全，最后索性自己写了一小段 Python 爬了一遍布卡。（实际上由于调试和某些低级错误，大约爬了2.5遍</p>
+<p>目前的搜索还是得依靠 Python 对 sqlite3 的搜索结果进行排版，搜索量少还可以在手机上用 Termux 装上 Python3 来凑合凑合，量多了实在有点烦人。<br>之后有打算用 PHP + MySQL 重写一下，不过到时候还得找个地方部署一下，新版的 now.sh 真的没弄懂如何部署，等写完了再看吧。</p>
+<p>另外补充一点，从布卡下载的图片，由于其本身要对图片进行防盗，所以下载回来的文件都是<code>.view</code>后缀。<br>然而文件实际上并未进行其他的加密运算，只是在图片的文件头上加了点料，只需要直接<code>seek(64)</code>，之后的内容就是原始图片了。</p>
+
+            
+          </div>
+          <div class="archive-post-info">
+            <time class="archive-post-time">
+              2019-08-11
+            </time>
+            <a class="archive-post-link" href="../../2019/08/11/buka-search-and-pic/">
+              布卡漫画搜索 & 下载
+            </a>
+          </div>
+        </div>
+      
+      
+        
+      
+  </div>
+  
+  <nav class="pagination">
+      <span class="page-number current">1</span>
+  </nav>
+
+
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a href="https://github.com/sffxzzp" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2019 ~ 2021</span>
+        <span>❤</span>
+        <span>sffxzzp</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+    <div class="visit_count">
+        <i class="iconfont icon-eye"></i>
+        <span id="busuanzi_value_site_uv"></span>
+        <i class="iconfont icon-team"></i>
+        <span id="busuanzi_value_site_pv"></span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>随笔</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Python</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>JavaScript</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CloudFlare</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Workers</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>安卓</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Fyde OS</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>其他</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Go</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>PHP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Docker</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Win10</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>RSS</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Discuz</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>随笔</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/08/11/buka-search-and-pic/">
+            <time class="tagcloud-posttime">2019 / 08 / 11</time>
+            <span>布卡漫画搜索 & 下载</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/08/05/storage-redirect-and-edxp/">
+            <time class="tagcloud-posttime">2019 / 08 / 05</time>
+            <span>存储重定向和EdXposed</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/07/17/travis/">
+            <time class="tagcloud-posttime">2019 / 07 / 17</time>
+            <span>最近用Travis-CI有感</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Python</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/08/11/buka-search-and-pic/">
+            <time class="tagcloud-posttime">2019 / 08 / 11</time>
+            <span>布卡漫画搜索 & 下载</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>JavaScript</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2020/05/16/zzzfun-analyzation/">
+            <time class="tagcloud-posttime">2020 / 05 / 17</time>
+            <span>记一次对 ZzzFun 网站的分析</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CloudFlare</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Workers</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>安卓</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2021/02/15/lsposed-golang/">
+            <time class="tagcloud-posttime">2021 / 02 / 15</time>
+            <span>LSPosed 与 Go 语言</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/08/05/storage-redirect-and-edxp/">
+            <time class="tagcloud-posttime">2019 / 08 / 05</time>
+            <span>存储重定向和EdXposed</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Fyde OS</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>其他</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/07/17/hello-world/">
+            <time class="tagcloud-posttime">2019 / 07 / 17</time>
+            <span>Hello World</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Go</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2021/02/15/lsposed-golang/">
+            <time class="tagcloud-posttime">2021 / 02 / 15</time>
+            <span>LSPosed 与 Go 语言</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>PHP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Docker</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Win10</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>RSS</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Discuz</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+  <script></script>
+  <script src="/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
+
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+    MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" async></script>
+
+
+
+  <script src="../../script/lib/pjax/pjax.js"></script>
+
+
+
+
+
+  <script src="../../script/scheme/banderole.js"></script>
+
+
+<script src="../../script/bootstarp.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="browsermode" content="application">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="La Lune">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name="format-detection" content="telephone=no">
+
+
+
+
+
+  <meta name="keywords" content="随笔, PHP, Discuz, nlvi">
+
+
+<link rel="apple-touch-startup-image" media="(device-width: 375px)" href="assets/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(orientation: landscape)" href="assets/apple-touch-startup-image-2048x1496.png">
+<link rel="stylesheet" href="../../../../style/style.css">
+<script>
+  var nlviconfig = {
+    title: "La Lune",
+    author: "sffxzzp",
+    baseUrl: "/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      pjax: true,
+      lazy: true,
+      toc: true
+    }
+  }
+</script>
+
+
+
+
+    <link rel="stylesheet" href="../../../../script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="../../../../syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+    <link rel="alternate" type="application/rss+xml" href="../../../../atom.xml">
+
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<style>
+@font-face {
+  font-family: "Allura";
+  src: url('/font/allura/allura.ttf');
+}
+</style>
+
+  <title> 最近写Discuz插件时的一些记录 · La Lune </title>
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <h1><a href="/">La Lune</a></h1>
+    
+  </div>
+</div>
+
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search-btn" aria-label="Search">
+        <i class="iconfont icon-search"></i>
+      </a>
+    </li>
+  
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../../../index.html" id="article">
+        <span class="base-name">
+          
+            文章
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../../../archives" id="archives">
+        <span class="base-name">
+          
+            归档
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">
+          
+            标签
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../../../about" id="about">
+        <span class="base-name">
+          
+            关于
+          
+        </span>
+      </a>
+    </li>
+  
+  
+    
+  
+    <li class="menu-item">
+      <a href="../../../../atom.xml" id="rss">
+        <span class="base-name">
+          
+            订阅
+          
+        </span>
+      </a>
+    </li>
+  
+  
+  </ul>
+  
+</nav>
+
+  </div>
+</header>
+<div class="mobile-header" id="mobile-header">
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <div class="header-menu-line"></div>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">La Lune</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+  <div class="mobile-header-body">
+    <ul class="mobile-header-list">
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-0">
+          <a href="../../../../index.html">
+            
+              文章
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-1">
+          <a href="../../../../archives">
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-2">
+          <a href="javascript:;" id="mobile-tags">
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-3">
+          <a href="../../../../about">
+            
+              关于
+            
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item syuanpi fadeInRightShort back-4">
+          <a href="../../../../atom.xml">
+            
+              订阅
+            
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+    <div class="container-inner" style="display:none;">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInRightShort back-1">
+        <div class="post-time-wrapper">
+          
+          <time>2019-10-29</time>
+          
+        </div>
+      </div>
+      <h2 class="post-title syuanpi fadeInRightShort back-2">
+        
+          最近写Discuz插件时的一些记录
+        
+      </h2>
+    </header>
+    <div class="post-content syuanpi fadeInRightShort back-3">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近撸 Discuz 的插件的时候，遇到了一些问题。</p>
+<p>不得不说 Discuz 官方这个 Doc 是真的坑，要什么什么没有，全得自己找。</p>
+<p>不过好在这次遇到的问题都并不算困难，而且很多都参考了以前的插件，还是很快就搞定了。</p>
+<p>不过考虑到以后可能用到，还是先写一点记一下。</p>
+<h3 id="Array-注入点与-postlist"><a href="#Array-注入点与-postlist" class="headerlink" title="Array 注入点与 $postlist"></a>Array 注入点与 $postlist</h3><p>首先是每个 post 的注入点如何针对楼层内容进行处理。</p>
+<p>Array 注入点本身其实没什么好说的，是几就显示在几的位置。</p>
+<p>麻烦的是 Doc 里没提到的这个 $postlist 变量，这个变量存储了当前页面所有 post 的数据。与这个配合，才能更好的针对每一层的内容（主要是pid）进行处理。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">viewthread_postaction_output</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">global</span> $postlist;</span><br><span class="line">    $output = [];</span><br><span class="line">    <span class="keyword">foreach</span> ($postlist <span class="keyword">as</span> $pid =&gt; $data) &#123;</span><br><span class="line">        $output[] = $pid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="关于发帖后获取当前帖信息"><a href="#关于发帖后获取当前帖信息" class="headerlink" title="关于发帖后获取当前帖信息"></a>关于发帖后获取当前帖信息</h3><p>这个也非常坑，搜索了很久，最后还是被 luckypost 救了。</p>
+<p>不得不说，DZ 对很多东西进行了魔改，比如说变量 $_G，前端里的 js（包括但不限于选择器、ajax等），还有就是这次的 $_GET。</p>
+<p>本来以为发帖之后获取当前帖子的信息这一点要修改 DZ 的原始文件，没想到并不用。</p>
+<p>但搜到的 <a href="https://www.v2ex.com/t/274551" target="_blank" rel="noopener">v2ex 帖子</a>写的非常含糊。</p>
+<p>不过最后还是被我给找到了正确的使用方法，如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// $value = '&#123;"param":["post_newthread_succeed","forum.php?mod=viewthread&amp;tid=1&amp;extra=",&#123;"fid":"1","tid":1,"pid":1,"coverimg":"","sechash":""&#125;,[],0]&#125;';</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">post_</span>&lt;<span class="title">pluginId</span>&gt;<span class="title">_message</span><span class="params">($value)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 这里就可以做发帖之后的流程了，$value 里是能拿到的一些信息。</span></span><br><span class="line">    <span class="comment">// debug() 函数可以停止跳转并直接输出，配合 var_dump() 很舒服。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>仅作为备忘。没什么其他好说的了。</p>
+
+      
+    
+    </div>
+    
+      <div class="post-tags syuanpi fadeInRightShort back-3">
+      
+        <a href="../../../../tags/随笔/">随笔</a>
+      
+        <a href="../../../../tags/PHP/">PHP</a>
+      
+        <a href="../../../../tags/Discuz/">Discuz</a>
+      
+      </div>
+    
+    
+      
+
+      
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="../../../11/22/readably-and-myreader/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>Readably 和 My Reader
+        </span>
+      </a>
+    
+    
+      <a href="../../../09/03/cloudflare-5s-and-fyde-os/" id="art-right" class="art-right">
+        <span class="prev-title">
+          过CloudFlare 5秒盾与Fyde OS体验<i class="iconfont icon-right"></i>
+        </span>
+      </a>
+    
+  </nav>
+
+
+    
+  <i id="com-switch" class="iconfont icon-down jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+
+    
+    
+
+    
+  <div id="lv-container" data-id="city" data-uid="MTAyMC80NTM2Ni8yMTg3OQ==">
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+  </div>
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <div class="title"><span>文章导航</span></div>
+    <div class="toc-inner">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-注入点与-postlist"><span class="toc-text">Array 注入点与 $postlist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于发帖后获取当前帖信息"><span class="toc-text">关于发帖后获取当前帖信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+    </div>
+  </aside>
+
+
+
+  
+
+
+        </div>
+      </main>
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+  
+  
+    <a href="https://github.com/sffxzzp" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2019 ~ 2021</span>
+        <span>❤</span>
+        <span>sffxzzp</span>
+    </div>
+    <div class="theme">
+        <span>
+            动力来源于
+            <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo </a>
+        </span>
+        <span>
+            主题
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+    <div class="visit_count">
+        <i class="iconfont icon-eye"></i>
+        <span id="busuanzi_value_site_uv"></span>
+        <i class="iconfont icon-team"></i>
+        <span id="busuanzi_value_site_pv"></span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-taglist">
+  
+    <div class="tagcloud-tag">
+      <button>随笔</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Python</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>JavaScript</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>CloudFlare</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Workers</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>安卓</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Fyde OS</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>其他</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Go</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>PHP</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Docker</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Win10</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>RSS</button>
+    </div>
+  
+    <div class="tagcloud-tag">
+      <button>Discuz</button>
+    </div>
+  
+  </div>
+  
+    <div class="tagcloud-postlist active">
+      <h2>随笔</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/11/buka-search-and-pic/">
+            <time class="tagcloud-posttime">2019 / 08 / 11</time>
+            <span>布卡漫画搜索 & 下载</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/05/storage-redirect-and-edxp/">
+            <time class="tagcloud-posttime">2019 / 08 / 05</time>
+            <span>存储重定向和EdXposed</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/07/17/travis/">
+            <time class="tagcloud-posttime">2019 / 07 / 17</time>
+            <span>最近用Travis-CI有感</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Python</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/11/buka-search-and-pic/">
+            <time class="tagcloud-posttime">2019 / 08 / 11</time>
+            <span>布卡漫画搜索 & 下载</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>JavaScript</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/05/16/zzzfun-analyzation/">
+            <time class="tagcloud-posttime">2020 / 05 / 17</time>
+            <span>记一次对 ZzzFun 网站的分析</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/10/27/astar-proxy/">
+            <time class="tagcloud-posttime">2020 / 10 / 27</time>
+            <span>Astar 插件分析</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>CloudFlare</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Workers</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2020/04/09/cf-workers-as-cdn/">
+            <time class="tagcloud-posttime">2020 / 04 / 09</time>
+            <span>用 CF-Workers 来做 Github Releases 的下载加速</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>安卓</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2021/02/15/lsposed-golang/">
+            <time class="tagcloud-posttime">2021 / 02 / 15</time>
+            <span>LSPosed 与 Go 语言</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/05/storage-redirect-and-edxp/">
+            <time class="tagcloud-posttime">2019 / 08 / 05</time>
+            <span>存储重定向和EdXposed</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Fyde OS</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/09/03/cloudflare-5s-and-fyde-os/">
+            <time class="tagcloud-posttime">2019 / 09 / 03</time>
+            <span>过CloudFlare 5秒盾与Fyde OS体验</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>其他</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/07/17/hello-world/">
+            <time class="tagcloud-posttime">2019 / 07 / 17</time>
+            <span>Hello World</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Go</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2021/02/15/lsposed-golang/">
+            <time class="tagcloud-posttime">2021 / 02 / 15</time>
+            <span>LSPosed 与 Go 语言</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>PHP</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Docker</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/08/19/new-arukas-and-buka-search-php/">
+            <time class="tagcloud-posttime">2019 / 08 / 19</time>
+            <span>重新用上Arukas & 布卡搜索PHP版</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Win10</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>RSS</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/11/22/readably-and-myreader/">
+            <time class="tagcloud-posttime">2019 / 11 / 23</time>
+            <span>Readably 和 My Reader</span>
+          </a>
+        </div>
+      
+    </div>
+  
+    <div class="tagcloud-postlist ">
+      <h2>Discuz</h2>
+      
+        <div class="tagcloud-post">
+          <a href="../../../../index.html2019/10/29/recent-codes-on-dz/">
+            <time class="tagcloud-posttime">2019 / 10 / 29</time>
+            <span>最近写Discuz插件时的一些记录</span>
+          </a>
+        </div>
+      
+    </div>
+  
+</div>
+
+  </div>
+  <div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+  <div class="search" id="search">
+    <div class="input">
+      <input type="text" id="search-input" placeholder="搜索" autofocus>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+
+  <script></script>
+  <script src="/script/lib/lightbox/js/lightbox.min.js" async></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});</script>
+
+
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+    MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js" async></script>
+
+
+
+  <script src="../../../../script/lib/pjax/pjax.js"></script>
+
+
+
+
+
+  <script src="../../../../script/scheme/banderole.js"></script>
+
+
+<script src="../../../../script/bootstarp.js"></script>
+
+
+<script>
+if (nlviconfig.theme.toc) {
+  setTimeout(function() {
+    if (nlviconfig.theme.scheme === 'balance') {
+      $("#header").addClass("show_toc");
+    } else if (nlviconfig.theme.scheme === 'banderole') {
+      $(".container-inner").addClass("has_toc");
+      $(".post-toc .title").addClass("show");
+      $(".toc-inner").addClass("show");
+    }
+  }, 1000);
+}
+</script>
+
+
+
+</body>
+</html>
